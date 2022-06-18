@@ -1,6 +1,6 @@
 name: github actions workflow
 on: [push, pull_request]
-env:
+#env:
 
 jobs:
   first_job:
