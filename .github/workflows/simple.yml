@@ -16,17 +16,27 @@ jobs:
       - id: two
         name: echo
         run: echo "Hi there"
+
   second_job:
-    name: second_job
+    name: second job
     runs-on: ubuntu-latest
-    needs: first_job
-    strategy:
-      matrix:
-        environment: ['${{needs.first_job.outputs.output1}}','${{needs.first_job.outputs.output2}}']
-        exclude: 
-          - environment: ''
-    environment: ${{matrix.environment}}
     steps:
-      - id: one
-        name: print output of first job
-        run: $environment
+      - name: run python command
+        run: |
+          import platform
+          print(platform.processor())
+        shell: python
+  # second_job:
+  #   name: second_job
+  #   runs-on: ubuntu-latest
+  #   needs: first_job
+  #   strategy:
+  #     matrix:
+  #       environment: ['${{needs.first_job.outputs.output1}}','${{needs.first_job.outputs.output2}}']
+  #       exclude: 
+  #         - environment: ''
+  #   environment: ${{matrix.environment}}
+  #   steps:
+  #     - id: one
+  #       name: print output of first job
+  #       run: echo $environment
