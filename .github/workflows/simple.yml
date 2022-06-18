@@ -29,4 +29,4 @@ jobs:
     steps:
       - id: one
         name: print output of first job
-        run: echo ${{matrix.environment}}
+        run: $environment
