@@ -10,10 +10,10 @@ jobs:
       output1: ${{steps.step1.outputs.env}}
       output2: ${{steps.step2.outputs.env}}
     steps:
-      - id: 1
+      - id: one
         name: print envs
         run: printenv
-      - id: 2
+      - id: two
         name: echo
         run: echo "Hi there"
   second_job:
@@ -27,6 +27,6 @@ jobs:
           - environment: ''
     environment: ${{matrix.environment}}
     steps:
-      - id: 1
+      - id: one
         name: print output of first job
         run: echo ${{matrix.environment}}
