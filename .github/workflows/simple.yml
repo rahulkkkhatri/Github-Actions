@@ -1,0 +1,32 @@
+name: github actions workflow
+on: [push, pull_request]
+env:
+
+jobs:
+  first_job:
+    name: first_job
+    runs-on: ubuntu-latest
+    outputs:
+      output1: ${{steps.step1.outputs.env}}
+      output2: ${{steps.step2.outputs.env}}
+    steps:
+      - id: 1
+        name: print envs
+        run: printenv
+      - id: 2
+        name: echo
+        run: echo "Hi there"
+  second_job:
+    name: second_job
+    runs-on: ubuntu-latest
+    needs: first_job
+    strategy:
+      matrix:
+        environment: ['${{needs.first_job.outputs.output1}}','${{needs.first_job.outputs.output2}}']
+        exclude: 
+          - environment: ''
+    environment: ${{matrix.environment}}
+    steps:
+      - id: 1
+        name: print output of first job
+        run: echo ${{matrix.environment}}
