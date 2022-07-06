@@ -1,0 +1,14 @@
+name: Checkout Action
+on: [push, pull_request]
+jobs:
+  first_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone repo
+        uses: actions/checkout
+
+      - name: verify checkout
+        run: |
+          pwd
+          ls -a
+        
