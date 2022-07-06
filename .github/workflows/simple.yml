@@ -26,6 +26,23 @@ jobs:
           import platform
           print(platform.processor())
         shell: python
+
+  third_job:
+    name: third job
+    runs-on: windows-latest
+    steps:
+      - name: run python command
+        run: |
+          import platform
+          print(platform.processor())
+        shell: python
+      - name: run bash command
+        run: |
+          pwd
+        shell: bash
+      - name: run python command
+        run: |
+          get-command
   # second_job:
   #   name: second_job
   #   runs-on: ubuntu-latest
