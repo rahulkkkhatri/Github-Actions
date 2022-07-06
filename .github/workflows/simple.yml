@@ -40,7 +40,7 @@ jobs:
         run: |
           pwd
         shell: bash
-      - name: run python command
+      - name: run powershell command
         run: |
           get-command
   # second_job:
