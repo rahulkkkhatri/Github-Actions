@@ -3,6 +3,10 @@ on:
   push:
     paths:
       - '.github/workflows/checkout_action.yml'
+  pull_request:
+    paths:
+      - '.github/workflows/checkout_action.yml'
+    types: [closed, opened, reopened, assigned]
 
 jobs:
   first_job:
