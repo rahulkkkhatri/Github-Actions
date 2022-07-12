@@ -1,5 +1,8 @@
 name: github actions workflow
-on: [push, pull_request]
+on: 
+  push:
+    paths:
+      - '.github/workflows/simple.yml'
 #env:
 
 jobs:

@@ -1,5 +1,8 @@
 name: Refer Action in another GitHub Action
-on: [push, pull_request]
+on:
+  push:
+      paths:
+        - '.github/workflows/refer_action.yml'
 jobs:
   first_job:
     runs-on: ubuntu-latest
