@@ -22,3 +22,4 @@ jobs:
           echo $GITHUB_REPOSITORY
           echo $GITHUB_WORKSPACE
           echo ${{ github.event.repository.name }}
+          echo $ {{ github.event.client_payload.message}}
