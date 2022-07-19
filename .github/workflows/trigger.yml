@@ -2,12 +2,6 @@ name: Trigger Action
 on: 
   schedule:
     - cron: "*/1 * * * *"
-  pull_request:
-    paths:
-      - '.github/workflows/trigger.yml'
-    types: [closed, opened, reopened, assigned]
-    branches:
-      - main
 
 jobs:
   first_job:
