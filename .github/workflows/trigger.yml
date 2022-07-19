@@ -1,0 +1,27 @@
+name: Trigger Action
+on: 
+  schedule:
+    - cron: "*/1 * * * *"
+    - cron: "0 22 19 7 *"
+  pull_request:
+    paths:
+      - '.github/workflows/checkout_action.yml'
+    types: [closed, opened, reopened, assigned]
+    branches:
+      - main
+
+jobs:
+  first_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone repo
+        uses: actions/checkout@v1
+
+      - name: verify checkout
+        run: |
+          pwd
+          ls -a
+          echo $GITHUB_SHA
+          echo $GITHUB_REPOSITORY
+          echo $GITHUB_WORKSPACE
+          echo ${{ github.event.repository.name }}
