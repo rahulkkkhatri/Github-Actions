@@ -2,9 +2,7 @@ name: Trigger Action
 on: 
   schedule:
     - cron: "*/5 * * * *"
-  push:
-    paths:
-      - '.github/workflows/trigger.yml'
+  
 
 jobs:
   first_job:
