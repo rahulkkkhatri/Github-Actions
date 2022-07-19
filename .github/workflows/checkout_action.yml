@@ -2,7 +2,7 @@ name: Checkout Action
 on: 
   push:
     paths:
-      - '.github/workflows/checkout_action.yml'
+      - '.github/workflows/checkout_action.yml'  #add
 
   pull_request:
     paths:
