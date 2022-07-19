@@ -1,7 +1,10 @@
 name: Trigger Action
 on: 
-  schedule:
-    - cron: "0/5 * * * *"
+  # schedule:
+  #   - cron: "0/5 * * * *"
+
+  repository_dispatch:
+    types: [test_result]
   
 
 jobs:
