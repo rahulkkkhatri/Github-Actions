@@ -26,6 +26,8 @@ jobs:
       - name: upload artifact
         run: |
           echo "hi commit ${GITHUB_SHA}" >> ./artifacts/artifact-${GITHUB_SHA}
+          ls -al
+          pwd
           git add .
           git commit -m "added artifact-${GITHUB_SHA}"
           git push origin main 
