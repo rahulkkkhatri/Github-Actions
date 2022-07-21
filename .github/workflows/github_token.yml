@@ -23,24 +23,24 @@ jobs:
             }' \
           --fail
 
-      - name: Clone repo
-        uses: actions/checkout@v1
-      - name: upload artifact
-        run: |
-          git config --global user.email "bot@bot.com"
-          git config --global user.name "bot"
-          git config --global user.email
-          git config --global user.name
-          ls -al
-          pwd
-          git remote set-url origin "https://${GITHUB_ACTOR}:${{ secrets.GITHUB_TOKEN }}@github.com/${GITHUB_REPOSITORY}.git"
-          git fetch
-          git checkout main
-          git branch --set-upstream-to=origin/main
-          echo "hi commit - ${GITHUB_SHA}" > ${GITHUB_WORKSPACE}/artifacts/artifact-${GITHUB_SHA}.txt
-          ls -al
-          tree -a
-          git add -A
-          git commit -m "added artifact-${GITHUB_SHA}"
-          git branch -a
-          git push 
+      # - name: Clone repo
+      #   uses: actions/checkout@v1
+      # - name: upload artifact
+      #   run: |
+      #     git config --global user.email "bot@bot.com"
+      #     git config --global user.name "bot"
+      #     git config --global user.email
+      #     git config --global user.name
+      #     ls -al
+      #     pwd
+      #     git remote set-url origin "https://${GITHUB_ACTOR}:${{ secrets.GITHUB_TOKEN }}@github.com/${GITHUB_REPOSITORY}.git"
+      #     git fetch
+      #     git checkout main
+      #     git branch --set-upstream-to=origin/main
+      #     echo "hi commit - ${GITHUB_SHA}" > ${GITHUB_WORKSPACE}/artifacts/artifact-${GITHUB_SHA}.txt
+      #     ls -al
+      #     tree -a
+      #     git add -A
+      #     git commit -m "added artifact-${GITHUB_SHA}"
+      #     git branch -a
+      #     git push 
