@@ -32,7 +32,9 @@ jobs:
           echo "hi commit - ${GITHUB_SHA}" ${GITHUB_WORKSPACE}/artifacts/artifact-${GITHUB_SHA}.txt
           ls -al
           pwd
-          git remote add origin "https://${GITHUB_ACTOR}:${{ secrets.GITHUB_TOKEN }}@github.com/${GITHUB_REPOSITORY}.git"
+          git config --global user.email "rahul@example.com"
+          git config --global user.name "Chodumal"
+          #git remote add origin "https://${GITHUB_ACTOR}:${{ secrets.GITHUB_TOKEN }}@github.com/${GITHUB_REPOSITORY}.git"
           git add .
           git commit -m "added artifact-${GITHUB_SHA}"
           git push origin main 
