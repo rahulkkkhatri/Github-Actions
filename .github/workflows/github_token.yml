@@ -31,6 +31,7 @@ jobs:
           git config --global user.name ${GITHUB_ACTOR}
           ls -al
           pwd
+          git checkout main
           echo "hi commit - ${GITHUB_SHA}" > ${GITHUB_WORKSPACE}/artifacts/artifact-${GITHUB_SHA}.txt
           ls -al
           tree -a
@@ -38,4 +39,4 @@ jobs:
           git add -A
           git commit -m "added artifact-${GITHUB_SHA}"
           git branch -a
-          git push
+          git push origin main
