@@ -25,6 +25,8 @@ jobs:
 
       - name: upload artifact
         run: |
+          ls -al
+          pwd
           echo "hi commit ${GITHUB_SHA}" > ./artifacts/artifact-${GITHUB_SHA}
           ls -al
           pwd
