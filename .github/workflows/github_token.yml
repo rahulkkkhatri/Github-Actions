@@ -37,4 +37,5 @@ jobs:
           #git remote add origin "https://${GITHUB_ACTOR}:${{ secrets.GITHUB_TOKEN }}@github.com/${GITHUB_REPOSITORY}.git"
           git add -A
           git commit -m "added artifact-${GITHUB_SHA}"
+          git branch -a
           git push origin main 
