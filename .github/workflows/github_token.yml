@@ -30,7 +30,7 @@ jobs:
         run: |
           ls -al
           pwd
-          echo "hi commit ${GITHUB_SHA}" > $(pwd)/artifacts/artifact-${GITHUB_SHA}.txt
+          echo "hi commit ${GITHUB_SHA}" > ${GITHUB_WORKSPACE}/artifacts/artifact-${GITHUB_SHA}.txt
           ls -al
           pwd
           git add .
