@@ -31,7 +31,7 @@ jobs:
           git config --global user.name "Chodumal"
           ls -al
           pwd
-          echo "hi commit - ${GITHUB_SHA}" ${GITHUB_WORKSPACE}/artifacts/artifact-${GITHUB_SHA}.txt
+          echo "hi commit - ${GITHUB_SHA}" > ${GITHUB_WORKSPACE}/artifacts/artifact-${GITHUB_SHA}.txt
           ls -al
           tree -a
           #git remote add origin "https://${GITHUB_ACTOR}:${{ secrets.GITHUB_TOKEN }}@github.com/${GITHUB_REPOSITORY}.git"
