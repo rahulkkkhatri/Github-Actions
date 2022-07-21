@@ -12,14 +12,18 @@ jobs:
         id: github_context_step
         run: echo '${{ toJSON(github) }}'
       - name: Dump job context
-        run: echo '${{ toJSON(job) }}'
+        if: success()
+        run: eccho '${{ toJSON(job) }}'
       - name: Dump steps context
-        run: echo '${{ toJSON(steps) }}'
+        if: failure()
+        run: eccho '${{ toJSON(steps) }}'
       - name: Dump runner context
+        if: always()
         run: echo '${{ toJSON(runner) }}'
       - name: Dump strategy context
         run: echo '${{ toJSON(strategy) }}'
       - name: Dump matrix context
+        if: cancelled()
         run: echo '${{ toJSON(matrix) }}'
   functions_expression:
     runs-on: ubuntu-latest
