@@ -25,7 +25,6 @@ jobs:
 
       - name: Clone repo
         uses: actions/checkout@v1
-
       - name: upload artifact
         run: |
           ls -al
