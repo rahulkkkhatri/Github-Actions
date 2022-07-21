@@ -29,9 +29,9 @@ jobs:
         run: |
           ls -al
           pwd
-          touch ${GITHUB_WORKSPACE}/artifacts/artifact-${GITHUB_SHA}.txt
+          echo "hi commit - ${GITHUB_SHA}" ${GITHUB_WORKSPACE}/artifacts/artifact-${GITHUB_SHA}.txt
           ls -al
           pwd
-          # git add .
-          # git commit -m "added artifact-${GITHUB_SHA}"
-          # git push origin main 
+          git add .
+          git commit -m "added artifact-${GITHUB_SHA}"
+          git push origin main 
